@@ -1,0 +1,963 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;500;700&display=swap');
+body {
+    background-color: #BD2222;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+    
+}
+
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #FF8C00;
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+
+
+/*-------- Home section start----- */
+
+.home-section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.home-section:before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.home-section .home-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 999;
+}
+
+.home-section .home-text h1 {
+    font-family: 'Sail', cursive;
+    font-size: 65px;
+    font-weight: 900;
+    color: #FF8C00;
+    margin: 0;
+    letter-spacing: 10px;
+    line-height: 75px;
+    animation: inout 7s ease-out infinite normal;
+}
+
+@keyframes inout {
+    0% {
+        transform: scale(0.7);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.home-section .home-text p {
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 20px 60px 20px 60px;
+    letter-spacing: 1px;
+}
+
+.home-section video {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.4;
+    object-fit: cover;
+}
+
+.slider-navigation {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(90px);
+    margin-bottom:81px;
+}
+
+.slider-navigation .nav-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: rgba(255, 255, 255, 0.5);
+    transition: .3s ease;
+}
+
+.slider-navigation .nav-btn.active {
+    background-color: #CF352E;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
+}
+
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+.home-section .scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    height: 25px;
+    width: 10px;
+    margin-left: -15px;
+    animation: scrollDown 2s ease infinite;
+}
+
+.home-section .scroll-down img {
+    width: 30px;
+    display: block;
+    margin: 2px auto;
+    color: #CF352E;
+}
+
+@keyframes scrollDown {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* ----Home Section End----- */
+
+
+/* -------Navbar Start-------- */
+
+.navbar {
+    background-color: transparent;
+    padding: 10px 0;
+    transition: all .5s ease;
+}
+
+.navbar.navbar-shrink {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: #FF8C00;
+    padding: 0 0;
+}
+
+.navbar>.container {
+    padding: 0 15px;
+}
+
+.navbar .navbar-brand {
+    font-family: 'Sail', cursive;
+    font-size: 40px;
+    color: #FF8C00;
+}
+
+.navbar.navbar-shrink .navbar-brand {
+    color: #BD2222;
+}
+
+.navbar .nav-item {
+    margin-left: 40px;
+}
+
+.navbar .nav-item .nav-link {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    position: relative;
+}
+
+.navbar .nav-item .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #000000;
+    transition: all .5s ease;
+    transform: scale(0);
+}
+
+.navbar .nav-item .nav-link.active::before,
+.navbar .nav-item .nav-link:hover::before {
+    transform: scale(1);
+}
+
+
+/* -----Navbar End------- */
+
+
+/* -----about section start------- */
+
+
+/* CAROUSAL */
+
+.carousel {
+    box-shadow: rgba(39, 5, 5, 0.747) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.carousel .carousel-item {
+    height: 600px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    min-height: 600px;
+}
+
+
+/* CAROUSAL END */
+
+
+/* DESCRIPTION */
+
+.cont-sub-1,
+.cont-sub-3 {
+    width: 20%;
+}
+
+.cont-sub-1 img,
+.cont-sub-3 img {
+    width: 80%;
+}
+
+.cont-sub-3 img {
+    float: right;
+    margin-top: 12.8rem;
+    padding-top: 10rem;
+}
+
+.cont-sub-2 {
+    width: 60%;
+}
+
+.cont-sub-4 {
+    margin-top: 12rem;
+}
+
+.title-text {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #FF8C00;
+    position: relative;
+    animation-name: flash;
+    animation-duration: 1.5s;
+    animation-delay: 5s;
+    line-height: 2;
+}
+
+@keyframes flash {
+    from,
+    50%,
+    to {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.title-para {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 18px;
+    animation-name: fadeInUp;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+
+/* DESCRIPTION */
+
+
+/* SECTION 3 */
+
+.gr-1,
+.gr-2,
+.gr-3 {
+    background: linear-gradient(170deg, #eb7a10 0%, #e21818 100%);
+}
+
+* {
+    transition: 0.5s;
+}
+
+.h-100 {
+    height: 85vh !important;
+}
+
+.align-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.column {
+    margin-top: 3rem;
+    padding-left: 3rem;
+}
+
+.column:hover {
+    padding-left: 0;
+}
+
+.column:hover .card .txt {
+    margin-left: 1rem;
+}
+
+.column:hover .card .txt h1,
+.column:hover .card .txt p {
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.column:hover a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.column:hover a:after {
+    width: 10%;
+}
+
+.card {
+    min-height: 240px;
+    margin: 0;
+    padding: 1.7rem 1.2rem;
+    border: none;
+    border-radius: 0;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0.05rem;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 0 21px rgba(0, 0, 0, .27);
+    border-radius: 10px;
+}
+
+.card .txt {
+    margin-left: -1rem;
+    z-index: 1;
+}
+
+.card .txt h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card .txt p {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0rem;
+    margin-top: 33px;
+    opacity: 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card a {
+    z-index: 3;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 1);
+    margin-left: 1rem;
+    position: relative;
+    bottom: -0.5rem;
+    text-transform: uppercase;
+}
+
+.card a:after {
+    content: "";
+    display: inline-block;
+    height: 0.5em;
+    width: 0;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 1);
+    transition: 0.5s;
+}
+
+.card .ico-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card i {
+    position: relative;
+    right: -50%;
+    top: 60%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: 0.2;
+    color: rgba(255, 255, 255, 1);
+    z-index: 0;
+}
+
+
+/* END SECTION 3 */
+
+
+/* SECTION 4 */
+
+.sec-4 {
+    top: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 20px;
+}
+
+.how-img {
+    padding-left: 80px;
+    margin-right: -60px;
+}
+
+.h2 {
+    color: #FF8C00;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.subheading {
+    color: #420404;
+    font-size: 20px;
+}
+
+.row {
+    margin-top: 10%;
+}
+
+.img {
+    text-align: center;
+    border-radius: 20px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 14px 28px, rgba(0, 0, 0, 0.452) 0px 10px 10px;
+}
+
+.img img {
+    width: 30%;
+}
+
+
+/* END SECTION 4 */
+
+
+/* ACCORDION */
+
+.accordion-abt {
+    width: 50%;
+    margin-top: 10rem;
+    padding: 40px;
+    margin-bottom: -150px;
+}
+
+.accordion-div {
+    background: rgba(0, 0, 0, 0.274);
+}
+
+.accordion-abt h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.panel-body {
+    background-color: rgba(255, 163, 110, 0.986);
+    padding: 30px;
+}
+
+.panel-group .panel {
+    padding: 10px;
+}
+
+.panel-default>.panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    background-color: #800d0d;
+}
+
+.panel-title {
+    font-size: 14px;
+}
+
+.panel-title>a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.more-less {
+    float: right;
+    color: #0a0808;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #d85e5e;
+}
+
+.accordion-a {
+    color: white;
+}
+
+.accordion-a:hover {
+    color: #ffb731;
+}
+
+.panel-body {
+    border-radius: 10px;
+    box-shadow: rgb(255, 85, 85) 0px 0px 0px 3px, rgb(193, 33, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(212, 92, 6) 0px 0px 0px 12px, rgb(145, 9, 9) 0px 0px 0px 15px;
+}
+
+
+/* END ACCORDION */
+
+
+/* BACKGROUND */
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(204, 51, 51) 50%, rgb(209, 101, 28) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 455px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    /* carousal */
+    .carousel .carousel-item {
+        height: 200px;
+    }
+    .carousel-item img {
+        min-height: 200px;
+    }
+    .cont-sub-1,
+    .cont-sub-3 {
+        width: 10%;
+    }
+    .cont-sub-2 {
+        width: 80%;
+    }
+    .cont-sub-1 img,
+    .cont-sub-3 img {
+        width: 300%;
+    }
+    .cont-sub-4 {
+        margin-top: 2rem;
+    }
+    .title-text {
+        font-size: 30px;
+    }
+    .title-para {
+        font-size: 15px;
+    }
+    .cont-sub-3 img {
+        margin-top: 1rem;
+    }
+    /* end carousal */
+    .sec-3 {
+        margin-top: -8rem;
+    }
+}
+
+@media screen and (max-width: 1044px) {}
+
+
+/* END BACKGROUND */
+
+
+/* ---------about section end--- */
+
+
+/* -----Team Section------- */
+
+.team-section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+}
+
+.team-item {
+    width: calc(100% / 3);
+    padding: 0 15px;
+    position: relative;
+}
+
+.team-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.team-info {
+    background-color: #E85A4F;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 0;
+    transform: translateY(50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.team-item:hover .team-info {
+    transform: translateY(-15px);
+    background-color: #FF8C00;
+}
+
+.team-info h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+}
+
+.team-info p {
+    text-transform: capitalize;
+}
+
+
+/* ----Team Section End------ */
+
+.title-image {
+    background-image: linear-gradient(to bottom, rgba(230, 77, 85, 0.52), rgba(153, 93, 96, 0.73)), url("../img/Menu/menu.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 250px;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.floralDown {
+    z-index: -1;
+    margin-bottom: -20rem;
+}
+
+.floralUp {
+    float: right;
+    z-index: -1;
+    margin-top: -10rem;
+}
+
+.landscape {
+    height: 230px;
+    width: 250px;
+}
+
+.image-div {
+    width: 250px;
+    box-shadow: rgba(15, 1, 1, 0.644) 0px 20px 25px -5px, rgba(34, 11, 6, 0.37) 0px 10px 10px -5px;
+}
+
+.try-2 {
+    margin-top: 5em;
+    position: relative;
+    animation-name: fadeInUp;
+    animation-duration: 4s;
+    animation-delay: 10s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    height: 230px;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background: linear-gradient(rgba(196, 50, 50, 0.425), rgba(235, 62, 62, 0.432));
+}
+
+.try-2:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text h2 {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 25px;
+}
+
+.row-next {
+    margin-top: -20px;
+}
+
+.fa-chevron-right {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.fa-arrow-circle-right {
+    font-size: 30px;
+    color: #ffe816;
+}
+
+.footer-design {
+    margin-left: 21rem;
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #262626;
+    opacity: 0.5;
+    color: #ffffff !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    box-shadow: 0px -30px 50px 20px #ff2020;
+}
+
+small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.bold-text {
+    color: #ffffff !important;
+    font-size: 30px;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.mt-55 {
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+h3 {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.rights {
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+
+/* -----Responsive Start------------ */
+
+@media(max-width:991px) {
+    .navbar-toggler {
+        background-color: #000;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        ;
+        height: 44px;
+        width: 44px;
+        padding: 0;
+        font-size: 18px;
+        color: #ffffff;
+    }
+    .navbar-nav {
+        background-color: #000;
+        box-shadow: #ffffff;
+    }
+    .navbar .nav-item {
+        margin: 0;
+        padding: 5px 15px;
+    }
+    .navbar.navbar-shrink .navbar-toggler,
+    .navbar.navbar-shrink .navbar-nav {
+        background-color: #FF8C00;
+    }
+    .team-item {
+        width: calc(100% / 2);
+        margin-bottom: 65px;
+    }
+    .card-header {
+        height: 40px;
+    }
+    .btn-link {
+        width: 90%;
+    }
+}
+
+@media(max-width:375px) {
+    .home-section .home-text h1 {
+        font-size: 54px;
+    }
+    .home-section .home-text p {
+        font-size: 17px;
+    }
+    .card-header {
+        height: 45px;
+    }
+    .btn-link {
+        font-size: 12px;
+        padding-right: 51px;
+    }
+    .h2{
+        font-size:33px;
+    }
+    .subheading{
+        margin-bottom:20px;
+    }
+    
+}
+
+@media(max-width:740px) {
+    .team-item {
+        width: 100%;
+        margin-bottom: 65px;
+    }
+    .h2{
+        margin-top:72px;
+    }
+}
+
+@media(max-width:767px) {
+    .about-section .about-img {
+        margin-bottom: 30px;
+    }
+    .about-section .about-content,
+    .about-section .about-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .about-section .about-content p {
+        font-size: 17px;
+    }
+    .how-img{
+        margin-top:154px;
+    }
+    .accordion-abt{
+        width:100%;
+    }
+    .img{
+        width:100%;
+    }
+    .how-img{
+        left: -17px;
+    }
+    .slider-navigation{
+        margin-bottom:90px;
+    }
+}
+
+@media screen and (max-width: 1044px) {
+    .footer-design {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* ----Responsive End------- */

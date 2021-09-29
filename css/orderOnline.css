@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #BD2222;
+}
+
+
+/***
+.navbar {
+    background: rgba(88, 3, 3, 0.541);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-brand {
+    font-size: 30px;
+    margin-left: 10rem;
+    font-family: 'Cinzel Decorative', cursive;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    margin-right: 5rem;
+    font-family: 'Arima Madurai', cursive;
+}
+**/
+
+
+/* Navbar-end */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea:focus,
+input:focus {
+    border-color: transparent !important;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+iframe {
+    border: none !important;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+/*[ Contact ]*/
+
+.container-contact100 {
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.wrap-contact100 {
+    width: 600px;
+    background-image: linear-gradient(to bottom, rgba(36, 33, 33, 0.52), rgba(32, 32, 32, 0.73)), url("../img/Menu/order-image1.jpg");
+    background-size: cover;
+    box-shadow: rgb(255, 0, 0) 0px 13px 27px -5px, rgb(255, 0, 0) 0px 8px 16px -8px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 42px 55px 45px 55px;
+}
+
+
+/*[ Form ]*/
+
+.contact100-form {
+    width: 100%;
+}
+
+.contact100-form-title {
+    display: block;
+    font-size: 39px;
+    color: #ffffff;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 44px;
+}
+
+
+/*[ Input ]*/
+
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 13px;
+    margin-bottom: 27px;
+}
+
+.label-input100 {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+.input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #BD2222;
+}
+
+input.input100 {
+    height: 40px;
+}
+
+textarea.input100 {
+    min-height: 110px;
+    padding-top: 9px;
+    padding-bottom: 13px;
+}
+
+.input100:focus+.focus-input100::before {
+    width: 100%;
+}
+
+.has-val.input100+.focus-input100::before {
+    width: 100%;
+}
+
+
+/*[ Button ]*/
+
+.container-contact100-form-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 13px;
+}
+
+.wrap-contact100-form-btn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.contact100-form-bgbtn {
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    background: #BD2222;
+    background: -webkit-linear-gradient(left, #de2100, #f73e1e, #de0000, #ff5e00);
+    top: 0;
+    left: -100%;
+    transition: all 0.4s;
+}
+
+.contact100-form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+    left: 0;
+}
+
+.contact100-form-btn i {
+    transition: all 0.4s;
+}
+
+.contact100-form-btn:hover i {
+    transform: translateX(10px);
+}
+
+
+/*[ Responsive ]*/
+
+@media (max-width: 576px) {
+    .wrap-contact100 {
+        padding: 72px 15px 65px 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .alert-validate::before {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+/* BACKGROUND */
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(204, 51, 51) 50%, rgb(255, 102, 0) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+/* Footer */
+
+.footer-design {
+    margin-left: 21rem;
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #262626;
+    opacity: 0.5;
+    color: #ffffff !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    box-shadow: 0px -30px 50px 20px #ff2020;
+}
+
+small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.bold-text {
+    color: #ffffff !important;
+    font-size: 30px;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.mt-55 {
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+h3 {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.rights {
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+
+/* Footer Ends */
+
+@media screen and (max-width: 455px) {
+    .navbar-brand {
+        margin-left: 5rem;
+    }
+}
+
+@media screen and (max-width: 1044px) {
+    .navbar-brand {
+        margin-left: 2rem;
+    }
+    .footer-design {
+        margin-left: 0;
+        width: 100%;
+    }
+}
